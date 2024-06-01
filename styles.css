@@ -1,0 +1,67 @@
+body {
+    background-color: #F5F5F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+.calculator {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    overflow: hidden;
+}
+
+.calculator-display {
+    background-color: #FFFFFF;
+    color: #6200EE  ;
+    font-size: 2em;
+    padding: 20px;
+    text-align: right;
+}
+
+.calculator-keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px; /* Add spacing between buttons */
+    padding: 8px; /* Add padding to the grid container */
+}
+
+.key {
+    background-color: #FFFFFF;
+    border: 1px solid #6200EE; /* Add a light border */
+    padding: 18px; /* Adjust padding to create spacing */
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.key[data-action="clear"],
+.key[data-action="delete"],
+.key[data-action="divide"],
+.key[data-action="multiply"],
+.key[data-action="subtract"],
+.key[data-action="add"],
+.key[data-action="equals"],
+.key[data-action="decimal"] {
+    background-color: #6200EE;
+    color: #FFFFFF;
+}
+
+.key[data-action="add"] {
+    grid-row: span 2; /* Expand the button to cover 2 rows */
+}
+
+.key[data-action="equals"] {
+    grid-column: span 2;
+    background-color: #03DAC5;
+    color: #000000;
+}
+
+.key:hover {
+    background-color: #03DAC5;
+}
